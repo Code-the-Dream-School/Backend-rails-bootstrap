@@ -1,29 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sharks</h1>
+<div id="sharks" class="conatiner bg-secondary  px-4 py-4 my-5 rounded-3 border border-primary" style="width: 30rem;">
+<h1 class="my-4">Sharks</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Facts</th>
+    <tr >
+      <th class=" px-4">Name</th>
+      <th class=" px-4">Facts</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @sharks.each do |shark| %>
-      <tr>
+      <tr class="text-center">
         <td><%= shark.name %></td>
         <td><%= shark.facts %></td>
-        <td><%= button_to 'Show', shark_path(:id => shark.id), :method => :get %></td>
-	<td><%= button_to 'Edit', edit_shark_path(:id => shark.id), :method => :get %></td>
-        <td><%= button_to 'Destroy', shark_path(:id => shark.id), :method => :delete %></td>
+        <td ><%= button_to 'Show', shark_path(:id => shark.id), :method => :get, :class => "btn btn-warning btn-sm"%></td>
+	<td><%= button_to 'Edit', edit_shark_path(:id => shark.id), :method => :get, :class => "btn btn-warning btn-sm" %></td>
+        <td><%= button_to 'Destroy', shark_path(:id => shark.id), :method => :delete, :class => "btn btn-warning btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New Shark', new_shark_path %>
+<%= link_to 'New Shark', new_shark_path, :class => "btn btn-primary btn-sm text-white" %>
+<%= link_to 'Home', home_index_path, :class => "btn btn-primary btn-sm text-white" %>
+
+</div>
